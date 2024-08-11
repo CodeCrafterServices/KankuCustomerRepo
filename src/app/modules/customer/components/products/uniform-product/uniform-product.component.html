@@ -1,0 +1,68 @@
+<!-- <div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let p of products">
+        <div class="card shadow-sm">
+          <div class="product-img position-relative overflow-hidden">
+            <img class="card-img-top img-fluid size" [src]="p.productImage[0]?.safeUrl" alt="{{ p.productName }}">
+            <div class="product-action">
+              <button type="button" class="btn btn-outline-dark btn-square"><i class="fa fa-shopping-cart"></i></button>
+              <button type="button" routerLink="/customer-purchase-home/details/{{p.productId}}"
+                class="btn btn-outline-dark btn-square"><i class="fa fa-info"></i></button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mb-0 text-truncate">{{ p.productName }}</h5>
+            
+            <div class="d-flex align-items-center justify-content-center mb-1">
+              <small class="fa fa-star text-primary mr-1"></small>
+              <small class="fa fa-star text-primary mr-1"></small>
+              <small class="fa fa-star text-primary mr-1"></small>
+              <small class="fa fa-star text-primary mr-1"></small>
+              <small class="fa fa-star text-primary mr-1"></small>
+              <small>(99)</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let p of products">
+        <div class="card shadow-sm">
+          <div class="product-img position-relative">
+            <img class="card-img-top img-fluid fixed-size" [src]="p.productImage[0]?.safeUrl" alt="{{ p.productName }}">
+            <div class="product-action d-flex justify-content-around">
+              <button type="button" class="btn btn-outline-dark btn-square"><i class="fa fa-shopping-cart"></i></button>
+              <button type="button" routerLink="/customer-purchase-home/details/{{p.productId}}"
+                class="btn btn-outline-dark btn-square"><i class="fa fa-info"></i></button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mb-0 text-truncate">{{ p.productName }}</h5>
+            <div class="d-flex align-items-center justify-content-center mb-1">
+              <small class="fa fa-star text-primary mr-1"></small>
+              <small class="fa fa-star text-primary mr-1"></small>
+              <small class="fa fa-star text-primary mr-1"></small>
+              <small class="fa fa-star text-primary mr-1"></small>
+              <small class="fa fa-star text-primary mr-1"></small>
+              <small>(99)</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

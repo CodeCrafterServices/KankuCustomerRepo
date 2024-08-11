@@ -1,0 +1,22 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+.auth-toggle-link{
+    color: blueviolet;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.fogetlink{
+    color: blueviolet;
+    font-size: 18px;
+    margin-top: 20px;
+    /* text-align: left; */
+
+}

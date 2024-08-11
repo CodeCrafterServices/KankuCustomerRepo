@@ -1,0 +1,61 @@
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
+
+.size{
+    /* font-size: 1.2rem; */
+    color: black;
+    font-weight: 700;
+}
+
+
+
+
+
+
+.fixed-size {
+  width: 100%;
+  height: 300px; /* Set a fixed height */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.product-img {
+  height: 300px; /* Match the height with the image height */
+  overflow: hidden;
+}
+
+.product-action {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.product-action .btn-square {
+  width: 48%;
+}

@@ -1,0 +1,22 @@
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let p of tiffin">
+        <div class="card shadow-sm">
+          <!-- <img src="{{p.imageUrl}}" class="card-img-top img-fluid" alt="{{ p.name }}"> -->
+          <div class="card-body">
+            <h5 class="card-title mb-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{
+              p.name }}</h5> <!-- Product Name -->
+            <p class="card-text">₹{{ p.price }}</p> <!-- Display price -->
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="btn-group">
+                <button type="button" routerLink="/details" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary ml-2">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
