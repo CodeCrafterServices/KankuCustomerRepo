@@ -27,6 +27,8 @@ export class SignInComponent {
 
   formSubmit() {
     this.service.login(this.form.value).subscribe(res => {
+      console.log(res);
+
       if (res !== null) {
         this.storage.saveToken(res.jwtToken);
         this.storage.getCurrentUser().subscribe(res => {

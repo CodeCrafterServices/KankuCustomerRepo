@@ -213,7 +213,7 @@
       <div *ngFor="let p of products" class="col-lg-3 col-md-4 col-sm-6 pb-1">
         <div class="product-item bg-light mb-4">
           <div class="product-img position-relative overflow-hidden">
-            <img class="img-fluid w-100" [src]="p.productImage[0]?.safeUrl" alt="{{ p.productName }}"
+            <img class="img-fluid w-100" [src]="p.productImage[0].safeUrl" alt="{{ p.productName }}"
               style="height: 200px; width: auto; object-fit: cover;">
             <div class="product-action">
               <a class="btn btn-outline-dark btn-square"><i class="fa fa-shopping-cart"></i></a>

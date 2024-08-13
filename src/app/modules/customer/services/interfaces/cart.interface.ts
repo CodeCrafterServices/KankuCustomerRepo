@@ -7,4 +7,5 @@ export interface Cart {
     cartId: number;
     cartDate: string;
     sizes: Size[];
+    cartProductQuantity: number;
 }

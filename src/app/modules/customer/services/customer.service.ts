@@ -41,4 +41,8 @@ export class CustomerService {
     return this.http.put(`/api/cart/update`, item);
   }
 
+  updateCartQuantity(cart: Cart): Observable<any> {
+    return this.http.put(BASE_URL + "/cart/updateCartQuantity", cart);
+  }
+
 }

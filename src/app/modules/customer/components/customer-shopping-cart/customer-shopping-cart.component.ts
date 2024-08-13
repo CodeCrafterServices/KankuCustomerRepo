@@ -34,7 +34,7 @@ export class CustomerShoppingCartComponent implements OnInit {
   cart_product_qty: any = 1
 
   carts: Cart[] = []
-
+  isCartEmpty: Boolean = true;
   ngOnInit(): void {
     let customer = this.storage.getUser();
     this.customer.customerId = customer.customerId;
@@ -43,13 +43,17 @@ export class CustomerShoppingCartComponent implements OnInit {
       .pipe(
         map((x: Cart[], i) => x.map((cart: Cart) => this.imageProcess.createImage(cart)))
       ).subscribe(res => {
-        this.carts = res;
-        this.carts.map((c) => {
-          c.sizes.map((p) => {
-            p.totalProductQuantity = 1;
-            p.totalAmount = p.productPrice;
+        if (res !== null) {
+          this.isCartEmpty = false;
+          this.carts = res;
+          this.carts.map((c) => {
+            c.sizes.map((p) => {
+              p.totalProductQuantity = c.cartProductQuantity;
+              p.totalAmount = p.productPrice * c.cartProductQuantity;
+            })
+
           })
-        })
+        }
       }, err => {
         console.log(err);
       })
@@ -100,6 +104,12 @@ export class CustomerShoppingCartComponent implements OnInit {
   }
 
 
+  updateCart: Cart = {
+    cartId: 0,
+    cartProductQuantity: 0,
+    cartDate: '',
+    sizes: []
+  }
 
 
   increaseQuantity(p: any, c: Cart) {
@@ -107,8 +117,15 @@ export class CustomerShoppingCartComponent implements OnInit {
     this.cart_obj.cartId = c.cartId;
     this.cart_obj.cartProductQuantity = p.totalProductQuantity;
     p.totalAmount = (p.totalProductQuantity * p.productPrice);
-    console.log(this.cart_obj);
+    // console.log(this.cart_obj);
+    this.updateCart.cartId = c.cartId;
+    this.updateCart.cartProductQuantity = p.totalProductQuantity
 
+    this.service.updateCartQuantity(this.updateCart).subscribe(res => {
+      console.log(res);
+    }, err => {
+      console.log(err);
+    })
 
     // this.updateCartItem(this.cart_obj);
   }
@@ -117,10 +134,20 @@ export class CustomerShoppingCartComponent implements OnInit {
   decreaseQuantity(p: any, c: Cart) {
     if (p.totalProductQuantity > 1) {
       p.totalProductQuantity--;
+      p.totalProductQuantity = p.totalProductQuantity;
       this.cart_obj.cartId = c.cartId;
       this.cart_obj.cartProductQuantity = p.totalProductQuantity;
       p.totalAmount = (p.totalProductQuantity * p.productPrice);
       console.log(this.cart_obj);
+
+      this.updateCart.cartId = c.cartId;
+      this.updateCart.cartProductQuantity = p.totalProductQuantity
+
+      this.service.updateCartQuantity(this.updateCart).subscribe(res => {
+        console.log(res);
+      }, err => {
+        console.log(err);
+      })
 
       // this.updateCartItem(item);
     }

@@ -32,7 +32,7 @@ export class ImageProcessService {
       cart.sizes.map(f => {
         f.product.productImage = productImageToFileHandle
       })
-      console.log(cart);
+      // console.log(cart);
 
       return cart;
     }

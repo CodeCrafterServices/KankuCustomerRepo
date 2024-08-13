@@ -76,9 +76,10 @@
             <div class="bg-light p-30 mb-5">
                 <div class="border-bottom pb-2"></div>
                 <div class="pt-2">
-                    <a (click)="proceedToCheckout()" class="btn btn-block btn-primary font-weight-bold my-3 py-3">
+                    <button [disabled]="isCartEmpty" (click)="proceedToCheckout()"
+                        class="btn btn-block btn-primary font-weight-bold my-3 py-3">
                         Proceed To Checkout
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

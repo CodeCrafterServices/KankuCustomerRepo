@@ -122,7 +122,8 @@ export class CustomerProductDetailsComponent implements OnInit {
 
   sizeObj = {
     "sizes": this.sizes,
-    "customer_id": ''
+    "customer_id": '',
+    "cartProductQuantity": 0
   }
 
   form: FormGroup = new FormGroup({
@@ -132,6 +133,7 @@ export class CustomerProductDetailsComponent implements OnInit {
 
   addToCart() {
     this.sizeObj.customer_id = this.customerId;
+    this.sizeObj.cartProductQuantity = 1;
     this.sizes.map(s => {
       s.sizeId = this.form.get("sizeId")?.value;
     })
